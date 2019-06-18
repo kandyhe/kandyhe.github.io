@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hello Gridea | kandy</title>
+<title>linux下挂载硬盘方法 | kandy</title>
 <link rel="shortcut icon" href="https://kandyhe.github.io/favicon.ico?v=1560836192808">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -74,49 +74,96 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello Gridea
+              linux下挂载硬盘方法
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2018-12-12 ·
+                · 2019-06-18 ·
               </time>
-              
-                <a href="https://kandyhe.github.io/tag/gridea" class="post-tag">
-                  # Gridea
-                </a>
               
             </div>
             
-              <div class="post-feature-image" style="background-image: url('https://kandyhe.github.io/post-images/hello-gridea.png')">
+              <div class="post-feature-image" style="background-image: url('https://kandyhe.github.io/post-images/linux-xia-gua-zai-ying-pan-fang-fa.jpg')">
               </div>
             
             <div class="post-content">
-              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="http://hvenotes.fehey.com/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>𝖶𝗂𝗇𝖽𝗈𝗐𝗌</strong> 或 <strong>𝖬𝖺𝖼𝖮𝖲</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+              <p>一般使用<code>fdisk -l</code>命令可以列出系统中当前连接的硬盘设备和分区信息.新硬盘没有分区信息,则只显示硬盘大小信息.</p>
+<ul>
+<li>
+<p>关闭服务器加上新硬盘</p>
+</li>
+<li>
+<p>启动服务器，以root用户登录</p>
+</li>
+<li>
+<p>查看硬盘信息 <code>fdisk -l</code>
+<img src="http://upload-images.jianshu.io/upload_images/6534548-de03bcb0ec99ade4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li>
+<p>创建新硬盘分区命令参数：
+fdisk可以用m命令来看fdisk命令的内部命令；</p>
+</li>
+</ul>
+<pre><code>a：命令指定启动分区；
+d：命令删除一个存在的分区；
+l：命令显示分区ID号的列表；
+m：查看fdisk命令帮助；
+n：命令创建一个新分区；
+p：命令显示分区列表；
+t：命令修改分区的类型ID号；
+w：命令是将对分区表的修改存盘让它发生作用。
+</code></pre>
+<pre><code>Command (m for help):n  
+Command action  
+　　   e    extended                  //输入e为创建扩展分区  
+　　   p    primary partition (1-4)      //输入p为创建逻辑分区  
+p  
+Partion number(1-4)：1      //在这里输入l，就进入划分逻辑分区阶段了；  
+First cylinder (51-125, default 51):   //注：这个就是分区的Start 值；这里最好直接按回车，如果您输入了一个非默认的数字，会造成空间浪费；  
+Using default value 51  
+Command (m for help): w                     //最后输入w回车保存。
+</code></pre>
+<p><img src="http://upload-images.jianshu.io/upload_images/6534548-82cf31f74dea49a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>
+<p>查看一下：
+<code>fdisk -l</code></p>
+</li>
+<li>
+<p>格式化分区：
+<code>mkfs.ext4 /dev/sdb1</code>      //注：将/dev/sdb1格式化为ext4类型</p>
+</li>
+<li>
+<p>配置开机自动挂载
+因为mount挂载在重启服务器后会失效，所以需要将分区信息写到/etc/fstab文件中让它永久挂载：
+<code>vim /etc/fstab</code>
+加入：
+/dev/sdb1(磁盘分区)  /data1（挂载目录） ext4（文件格式）defaults  0  0</p>
+</li>
+<li>
+<p>挂载分区
+<code>mount -a</code></p>
+</li>
+<li>
+<p>查看硬盘信息
+<code>df -h</code>
+<img src="http://upload-images.jianshu.io/upload_images/6534548-a9dd2528484a63cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+</ul>
 
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://kandyhe.github.io/post/hello-gridea">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
         
 
         

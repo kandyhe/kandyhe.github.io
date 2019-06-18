@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kandyhe.github.io</id>
     <title>kandy</title>
-    <updated>2019-06-17T09:52:45.564Z</updated>
+    <updated>2019-06-18T05:37:04.170Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kandyhe.github.io"/>
     <link rel="self" href="https://kandyhe.github.io/atom.xml"/>
@@ -10,6 +10,77 @@
     <logo>https://kandyhe.github.io/images/avatar.png</logo>
     <icon>https://kandyhe.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, kandy</rights>
+    <entry>
+        <title type="html"><![CDATA[linux下挂载硬盘方法]]></title>
+        <id>https://kandyhe.github.io/post/linux-xia-gua-zai-ying-pan-fang-fa</id>
+        <link href="https://kandyhe.github.io/post/linux-xia-gua-zai-ying-pan-fang-fa">
+        </link>
+        <updated>2019-06-18T05:32:58.000Z</updated>
+        <content type="html"><![CDATA[<p>一般使用<code>fdisk -l</code>命令可以列出系统中当前连接的硬盘设备和分区信息.新硬盘没有分区信息,则只显示硬盘大小信息.</p>
+<ul>
+<li>
+<p>关闭服务器加上新硬盘</p>
+</li>
+<li>
+<p>启动服务器，以root用户登录</p>
+</li>
+<li>
+<p>查看硬盘信息 <code>fdisk -l</code>
+<img src="http://upload-images.jianshu.io/upload_images/6534548-de03bcb0ec99ade4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li>
+<p>创建新硬盘分区命令参数：
+fdisk可以用m命令来看fdisk命令的内部命令；</p>
+</li>
+</ul>
+<pre><code>a：命令指定启动分区；
+d：命令删除一个存在的分区；
+l：命令显示分区ID号的列表；
+m：查看fdisk命令帮助；
+n：命令创建一个新分区；
+p：命令显示分区列表；
+t：命令修改分区的类型ID号；
+w：命令是将对分区表的修改存盘让它发生作用。
+</code></pre>
+<pre><code>Command (m for help):n  
+Command action  
+　　   e    extended                  //输入e为创建扩展分区  
+　　   p    primary partition (1-4)      //输入p为创建逻辑分区  
+p  
+Partion number(1-4)：1      //在这里输入l，就进入划分逻辑分区阶段了；  
+First cylinder (51-125, default 51):   //注：这个就是分区的Start 值；这里最好直接按回车，如果您输入了一个非默认的数字，会造成空间浪费；  
+Using default value 51  
+Command (m for help): w                     //最后输入w回车保存。
+</code></pre>
+<p><img src="http://upload-images.jianshu.io/upload_images/6534548-82cf31f74dea49a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>
+<p>查看一下：
+<code>fdisk -l</code></p>
+</li>
+<li>
+<p>格式化分区：
+<code>mkfs.ext4 /dev/sdb1</code>      //注：将/dev/sdb1格式化为ext4类型</p>
+</li>
+<li>
+<p>配置开机自动挂载
+因为mount挂载在重启服务器后会失效，所以需要将分区信息写到/etc/fstab文件中让它永久挂载：
+<code>vim /etc/fstab</code>
+加入：
+/dev/sdb1(磁盘分区)  /data1（挂载目录） ext4（文件格式）defaults  0  0</p>
+</li>
+<li>
+<p>挂载分区
+<code>mount -a</code></p>
+</li>
+<li>
+<p>查看硬盘信息
+<code>df -h</code>
+<img src="http://upload-images.jianshu.io/upload_images/6534548-a9dd2528484a63cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://kandyhe.github.io/post/hello-gridea</id>
