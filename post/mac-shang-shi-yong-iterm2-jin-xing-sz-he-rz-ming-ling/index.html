@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hello Gridea | kandy</title>
+<title>mac上使用iterm2进行sz和rz命令 | kandy</title>
 <link rel="shortcut icon" href="https://kandyhe.github.io/favicon.ico?v=1561105572818">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -74,49 +74,70 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello Gridea
+              mac上使用iterm2进行sz和rz命令
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2018-12-12 ·
+                · 2019-06-21 ·
               </time>
               
-                <a href="https://kandyhe.github.io/tag/gridea" class="post-tag">
-                  # Gridea
+                <a href="https://kandyhe.github.io/tag/mac" class="post-tag">
+                  # Mac
                 </a>
               
             </div>
             
-              <div class="post-feature-image" style="background-image: url('https://kandyhe.github.io/post-images/hello-gridea.png')">
+              <div class="post-feature-image" style="background-image: url('https://www.iterm2.com/img/logo2x.jpg')">
               </div>
             
             <div class="post-content">
-              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="http://hvenotes.fehey.com/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>𝖶𝗂𝗇𝖽𝗈𝗐𝗌</strong> 或 <strong>𝖬𝖺𝖼𝖮𝖲</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+              <h2 id="前言">前言</h2>
+<p>在Windows下面使用xshell时，经常使用sz命令进行文件的上传下载非常方便。 mac上是不支持的，需要我们进行配置才能使用。</p>
+<h2 id="安装lrzsz">安装lrzsz</h2>
+<pre><code>brew install lrzsz
+</code></pre>
+<p><em>⚠️：没有安装brew的参考<a href="https://www.jianshu.com/p/dff8c837b7dd">这里</a></em></p>
+<h2 id="配置iterm2属性">配置iterm2属性</h2>
+<ul>
+<li>拉取<a href="https://github.com/luxihk/iterm2-zmodem">此处</a> 两个sh文件，将他们拷贝到/usr/local/bin文件夹中。命令如下：</li>
+</ul>
+<pre><code class="language-powershell"> cd /usr/local/bin 
+ wget https://raw.github.com/mmastrac/iterm2-zmodem/master/iterm2-send-zmodem.sh 
+ wget https://raw.github.com/mmastrac/iterm2-zmodem/master/iterm2-recv-zmodem.sh 
+ sudo chmod 777 /usr/local/bin/iterm2-* 
+</code></pre>
+<ul>
+<li>
+<p>配置</p>
+<p>打开 iterm2，Preferences -&gt; Profiles -&gt; Default -&gt; Advanced 的 tab 页 -&gt; Triggers - Edit，添加两条规则：</p>
+</li>
+</ul>
+<pre><code>Regular expression: rz waiting to receive.\*\*B0100
+            Action: Run Silent Coprocess
+        Parameters: /usr/local/bin/iterm2-send-zmodem.sh
+           Instant: checked
+
+Regular expression: \*\*B00000000000000
+            Action: Run Silent Coprocess
+        Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
+           Instant: checked
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/6534548-011afb1fcd49c33a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">
+<img src="https://upload-images.jianshu.io/upload_images/6534548-0f314e99165391bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://kandyhe.github.io/post/linux-xia-gua-zai-ying-pan-fang-fa">
+              <h3 class="post-title">
+                linux下挂载硬盘方法
+              </h3>
+            </a>
+          </div>
         
 
         
