@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://kandyhe.github.io</id>
+    <id>https://www.kandyhe.club/</id>
     <title>kandy</title>
-    <updated>2019-06-21T08:26:14.165Z</updated>
+    <updated>2019-06-21T08:28:47.021Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://kandyhe.github.io"/>
-    <link rel="self" href="https://kandyhe.github.io/atom.xml"/>
+    <link rel="alternate" href="https://www.kandyhe.club/"/>
+    <link rel="self" href="https://www.kandyhe.club//atom.xml"/>
     <subtitle>乱糟糟的日常</subtitle>
-    <logo>https://kandyhe.github.io/images/avatar.png</logo>
-    <icon>https://kandyhe.github.io/favicon.ico</icon>
+    <logo>https://www.kandyhe.club//images/avatar.png</logo>
+    <icon>https://www.kandyhe.club//favicon.ico</icon>
     <rights>All rights reserved 2019, kandy</rights>
     <entry>
         <title type="html"><![CDATA[mac上使用iterm2进行sz和rz命令]]></title>
-        <id>https://kandyhe.github.io/post/mac-shang-shi-yong-iterm2-jin-xing-sz-he-rz-ming-ling</id>
-        <link href="https://kandyhe.github.io/post/mac-shang-shi-yong-iterm2-jin-xing-sz-he-rz-ming-ling">
+        <id>https://www.kandyhe.club//post/mac-shang-shi-yong-iterm2-jin-xing-sz-he-rz-ming-ling</id>
+        <link href="https://www.kandyhe.club//post/mac-shang-shi-yong-iterm2-jin-xing-sz-he-rz-ming-ling">
         </link>
         <updated>2019-06-21T07:22:53.000Z</updated>
         <content type="html"><![CDATA[<h2 id="前言">前言</h2>
@@ -53,8 +53,8 @@ Regular expression: \*\*B00000000000000
     </entry>
     <entry>
         <title type="html"><![CDATA[linux下挂载硬盘方法]]></title>
-        <id>https://kandyhe.github.io/post/linux-xia-gua-zai-ying-pan-fang-fa</id>
-        <link href="https://kandyhe.github.io/post/linux-xia-gua-zai-ying-pan-fang-fa">
+        <id>https://www.kandyhe.club//post/linux-xia-gua-zai-ying-pan-fang-fa</id>
+        <link href="https://www.kandyhe.club//post/linux-xia-gua-zai-ying-pan-fang-fa">
         </link>
         <updated>2019-06-18T05:32:58.000Z</updated>
         <content type="html"><![CDATA[<p>一般使用<code>fdisk -l</code>命令可以列出系统中当前连接的硬盘设备和分区信息.新硬盘没有分区信息,则只显示硬盘大小信息.</p>
@@ -124,8 +124,8 @@ Command (m for help): w                     //最后输入w回车保存。
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://kandyhe.github.io/post/hello-gridea</id>
-        <link href="https://kandyhe.github.io/post/hello-gridea">
+        <id>https://www.kandyhe.club//post/hello-gridea</id>
+        <link href="https://www.kandyhe.club//post/hello-gridea">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
