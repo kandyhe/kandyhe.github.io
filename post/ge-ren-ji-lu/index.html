@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>linux下挂载硬盘方法 | kandy</title>
+<title>个人记录 | kandy</title>
 <link rel="shortcut icon" href="https://www.kandyhe.club//favicon.ico?v=1562915072795">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -74,87 +74,31 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              linux下挂载硬盘方法
+              个人记录
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-06-18 ·
+                · 2019-07-12 ·
               </time>
               
             </div>
             
-              <div class="post-feature-image" style="background-image: url('https://www.kandyhe.club//post-images/linux-xia-gua-zai-ying-pan-fang-fa.jpg')">
-              </div>
-            
             <div class="post-content">
-              <p>一般使用<code>fdisk -l</code>命令可以列出系统中当前连接的硬盘设备和分区信息.新硬盘没有分区信息,则只显示硬盘大小信息.</p>
-<ul>
-<li>
-<p>关闭服务器加上新硬盘</p>
-</li>
-<li>
-<p>启动服务器，以root用户登录</p>
-</li>
-<li>
-<p>查看硬盘信息 <code>fdisk -l</code><br>
-<img src="http://upload-images.jianshu.io/upload_images/6534548-de03bcb0ec99ade4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-<li>
-<p>创建新硬盘分区命令参数：<br>
-fdisk可以用m命令来看fdisk命令的内部命令；</p>
-</li>
-</ul>
-<pre><code>a：命令指定启动分区；
-d：命令删除一个存在的分区；
-l：命令显示分区ID号的列表；
-m：查看fdisk命令帮助；
-n：命令创建一个新分区；
-p：命令显示分区列表；
-t：命令修改分区的类型ID号；
-w：命令是将对分区表的修改存盘让它发生作用。
-</code></pre>
-<pre><code>Command (m for help):n  
-Command action  
-　　   e    extended                  //输入e为创建扩展分区  
-　　   p    primary partition (1-4)      //输入p为创建逻辑分区  
-p  
-Partion number(1-4)：1      //在这里输入l，就进入划分逻辑分区阶段了；  
-First cylinder (51-125, default 51):   //注：这个就是分区的Start 值；这里最好直接按回车，如果您输入了一个非默认的数字，会造成空间浪费；  
-Using default value 51  
-Command (m for help): w                     //最后输入w回车保存。
-</code></pre>
-<p><img src="http://upload-images.jianshu.io/upload_images/6534548-82cf31f74dea49a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li>
-<p>查看一下：<br>
-<code>fdisk -l</code></p>
-</li>
-<li>
-<p>格式化分区：<br>
-<code>mkfs.ext4 /dev/sdb1</code>      //注：将/dev/sdb1格式化为ext4类型</p>
-</li>
-<li>
-<p>配置开机自动挂载<br>
-因为mount挂载在重启服务器后会失效，所以需要将分区信息写到/etc/fstab文件中让它永久挂载：<br>
-<code>vim /etc/fstab</code><br>
-加入：<br>
-/dev/sdb1(磁盘分区)  /data1（挂载目录） ext4（文件格式）defaults  0  0</p>
-</li>
-<li>
-<p>挂载分区<br>
-<code>mount -a</code></p>
-</li>
-<li>
-<p>查看硬盘信息<br>
-<code>df -h</code><br>
-<img src="http://upload-images.jianshu.io/upload_images/6534548-a9dd2528484a63cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-</ul>
+              <p>http://42.159.9.244:18890</p>
 
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://www.kandyhe.club//post/firewall-zeng-jia-duan-kou">
+              <h3 class="post-title">
+                firewall增加端口
+              </h3>
+            </a>
+          </div>
         
 
         
