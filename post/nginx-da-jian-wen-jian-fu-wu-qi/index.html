@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>firewall增加端口 | kandy</title>
+<title>nginx搭建文件服务器 | kandy</title>
 <link rel="shortcut icon" href="https://www.kandyhe.club//favicon.ico?v=1562918698292">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -74,27 +74,35 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              firewall增加端口
+              nginx搭建文件服务器
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-06-24 ·
+                · 2019-07-12 ·
               </time>
               
             </div>
             
             <div class="post-content">
-              <pre><code>
-开端口命令：firewall-cmd --zone=public --add-port=80/tcp --permanent
-重启防火墙：systemctl restart firewalld.service
- 
-命令含义：
- 
---zone #作用域
- 
---add-port=80/tcp  #添加端口，格式为：端口/通讯协议
- 
---permanent   #永久生效，没有此参数重启后失效
+              <p>##1、修改nginx.conf配置文件，内容如下:</p>
+<pre><code>server {  
+        listen       9000;        #端口  
+        server_name  localhost;   #服务名  
+        charset utf-8; # 避免中文乱码
+        root    E:\Download\java;  #显示的根索引目录，注意这里要改成你自己的，目录要存在  
+
+        location / {
+            autoindex on;             #开启索引功能  
+            autoindex_exact_size off; # 关闭计算文件确切大小（单位bytes），只显示大概大小（单位kb、mb、gb）  
+            autoindex_localtime on;   # 显示本机时间而非 GMT 时间  
+        }
+    }
+</code></pre>
+<p>##2、启动、停止、加载nginx命令：<br>
+<em>注意路径是自己nginx安装路径</em></p>
+<pre><code>/usr/local/webserver/nginx/sbin/nginx -s reload            # 重新载入配置文件
+/usr/local/webserver/nginx/sbin/nginx -s reopen            # 重启 Nginx
+/usr/local/webserver/nginx/sbin/nginx -s stop              # 停止 Nginx
 </code></pre>
 
             </div>
@@ -104,9 +112,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://www.kandyhe.club//post/mac-shang-shi-yong-iterm2-jin-xing-sz-he-rz-ming-ling">
+            <a href="https://www.kandyhe.club//post/ge-ren-ji-lu">
               <h3 class="post-title">
-                mac上使用iterm2进行sz和rz命令
+                个人记录
               </h3>
             </a>
           </div>
