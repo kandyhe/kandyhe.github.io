@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.kandyhe.club/</id>
     <title>kandy</title>
-    <updated>2019-07-12T08:05:02.951Z</updated>
+    <updated>2019-07-12T08:06:06.629Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.kandyhe.club/"/>
     <link rel="self" href="https://www.kandyhe.club//atom.xml"/>
@@ -16,7 +16,7 @@
         <link href="https://www.kandyhe.club//post/nginx-da-jian-wen-jian-fu-wu-qi">
         </link>
         <updated>2019-07-12T08:01:45.000Z</updated>
-        <content type="html"><![CDATA[<p>##1、修改nginx.conf配置文件，内容如下:</p>
+        <content type="html"><![CDATA[<h2 id="1-修改nginxconf配置文件内容如下">1、修改nginx.conf配置文件，内容如下:</h2>
 <pre><code>server {  
         listen       9000;        #端口  
         server_name  localhost;   #服务名  
@@ -30,8 +30,8 @@
         }
     }
 </code></pre>
-<p>##2、启动、停止、加载nginx命令：<br>
-<em>注意路径是自己nginx安装路径</em></p>
+<h2 id="2-启动-停止-加载nginx命令">2、启动、停止、加载nginx命令：</h2>
+<p><em>注意路径是自己nginx安装路径</em></p>
 <pre><code>/usr/local/webserver/nginx/sbin/nginx -s reload            # 重新载入配置文件
 /usr/local/webserver/nginx/sbin/nginx -s reopen            # 重启 Nginx
 /usr/local/webserver/nginx/sbin/nginx -s stop              # 停止 Nginx
