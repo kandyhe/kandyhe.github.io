@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.kandyhe.club/</id>
     <title>kandy</title>
-    <updated>2019-10-15T10:11:55.923Z</updated>
+    <updated>2019-10-15T10:21:11.882Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.kandyhe.club/"/>
     <link rel="self" href="https://www.kandyhe.club//atom.xml"/>
@@ -17,10 +17,11 @@
         </link>
         <updated>2019-10-15T10:08:08.000Z</updated>
         <content type="html"><![CDATA[<ol>
-<li>kuwo https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf</li>
-<li>神级规则https://github.com/ConnersHua/Profiles/blob/master/README.md?source=post_page---------------------------</li>
-<li>Quan X list地址：https://github.com/ConnersHua/Profiles/tree/master/Quantumult/X/Filter/</li>
-<li></li>
+<li>Kuwo-VIP： <a href="https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf">进入</a></li>
+<li>神级规则：<a href="https://github.com/ConnersHua/Profiles/blob/master/README.md?source=post_page---------------------------">进入</a></li>
+<li>Quan X ：<a href="https://github.com/ConnersHua/Profiles/tree/master/Quantumult/X/Filter/">list</a></li>
+<li>Quantumult教程: <a href="https://github.com/shigalin/Quantumult/blob/master/README.md">进入</a></li>
+<li>QuantumultX教程:<a href="https://www.notion.so/kopshawn/Quantumult-X-1d32ddc6e61c4892ad2ec5ea47f00917">进入</a></li>
 </ol>
 ]]></content>
     </entry>
