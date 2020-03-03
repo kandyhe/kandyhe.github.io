@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://www.kandyhe.club/</id>
+    <id>https://kandyhe.github.io</id>
     <title>kandy</title>
-    <updated>2019-10-15T10:21:11.882Z</updated>
+    <updated>2020-03-03T06:17:30.034Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://www.kandyhe.club/"/>
-    <link rel="self" href="https://www.kandyhe.club//atom.xml"/>
+    <link rel="alternate" href="https://kandyhe.github.io"/>
+    <link rel="self" href="https://kandyhe.github.io/atom.xml"/>
     <subtitle>乱糟糟的日常</subtitle>
-    <logo>https://www.kandyhe.club//images/avatar.png</logo>
-    <icon>https://www.kandyhe.club//favicon.ico</icon>
-    <rights>All rights reserved 2019, kandy</rights>
+    <logo>https://kandyhe.github.io/images/avatar.png</logo>
+    <icon>https://kandyhe.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, kandy</rights>
     <entry>
         <title type="html"><![CDATA[Quan X]]></title>
-        <id>https://www.kandyhe.club//post/quan-x-x</id>
-        <link href="https://www.kandyhe.club//post/quan-x-x">
+        <id>https://kandyhe.github.io/post/quan-x-x/</id>
+        <link href="https://kandyhe.github.io/post/quan-x-x/">
         </link>
         <updated>2019-10-15T10:08:08.000Z</updated>
         <content type="html"><![CDATA[<ol>
@@ -27,8 +27,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[nginx搭建文件服务器]]></title>
-        <id>https://www.kandyhe.club//post/nginx-da-jian-wen-jian-fu-wu-qi</id>
-        <link href="https://www.kandyhe.club//post/nginx-da-jian-wen-jian-fu-wu-qi">
+        <id>https://kandyhe.github.io/post/nginx-da-jian-wen-jian-fu-wu-qi/</id>
+        <link href="https://kandyhe.github.io/post/nginx-da-jian-wen-jian-fu-wu-qi/">
         </link>
         <updated>2019-07-12T08:01:45.000Z</updated>
         <content type="html"><![CDATA[<h2 id="1-修改nginxconf配置文件内容如下">1、修改nginx.conf配置文件，内容如下:</h2>
@@ -55,8 +55,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[个人记录]]></title>
-        <id>https://www.kandyhe.club//post/ge-ren-ji-lu</id>
-        <link href="https://www.kandyhe.club//post/ge-ren-ji-lu">
+        <id>https://kandyhe.github.io/post/ge-ren-ji-lu/</id>
+        <link href="https://kandyhe.github.io/post/ge-ren-ji-lu/">
         </link>
         <updated>2019-07-12T07:03:20.000Z</updated>
         <content type="html"><![CDATA[<p>http://42.159.9.244:18890</p>
@@ -64,8 +64,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[firewall增加端口]]></title>
-        <id>https://www.kandyhe.club//post/firewall-zeng-jia-duan-kou</id>
-        <link href="https://www.kandyhe.club//post/firewall-zeng-jia-duan-kou">
+        <id>https://kandyhe.github.io/post/firewall-zeng-jia-duan-kou/</id>
+        <link href="https://kandyhe.github.io/post/firewall-zeng-jia-duan-kou/">
         </link>
         <updated>2019-06-24T03:03:55.000Z</updated>
         <content type="html"><![CDATA[<pre><code>
@@ -84,8 +84,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[mac上使用iterm2进行sz和rz命令]]></title>
-        <id>https://www.kandyhe.club//post/mac-shang-shi-yong-iterm2-jin-xing-sz-he-rz-ming-ling</id>
-        <link href="https://www.kandyhe.club//post/mac-shang-shi-yong-iterm2-jin-xing-sz-he-rz-ming-ling">
+        <id>https://kandyhe.github.io/post/mac-shang-shi-yong-iterm2-jin-xing-sz-he-rz-ming-ling/</id>
+        <link href="https://kandyhe.github.io/post/mac-shang-shi-yong-iterm2-jin-xing-sz-he-rz-ming-ling/">
         </link>
         <updated>2019-06-21T07:22:53.000Z</updated>
         <content type="html"><![CDATA[<h2 id="前言">前言</h2>
@@ -119,14 +119,14 @@ Regular expression: \*\*B00000000000000
         Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
            Instant: checked
 </code></pre>
-<p><img src="https://upload-images.jianshu.io/upload_images/6534548-011afb1fcd49c33a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>
-<img src="https://upload-images.jianshu.io/upload_images/6534548-0f314e99165391bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/6534548-011afb1fcd49c33a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" loading="lazy"><br>
+<img src="https://upload-images.jianshu.io/upload_images/6534548-0f314e99165391bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[linux下挂载硬盘方法]]></title>
-        <id>https://www.kandyhe.club//post/linux-xia-gua-zai-ying-pan-fang-fa</id>
-        <link href="https://www.kandyhe.club//post/linux-xia-gua-zai-ying-pan-fang-fa">
+        <id>https://kandyhe.github.io/post/linux-xia-gua-zai-ying-pan-fang-fa/</id>
+        <link href="https://kandyhe.github.io/post/linux-xia-gua-zai-ying-pan-fang-fa/">
         </link>
         <updated>2019-06-18T05:32:58.000Z</updated>
         <content type="html"><![CDATA[<p>一般使用<code>fdisk -l</code>命令可以列出系统中当前连接的硬盘设备和分区信息.新硬盘没有分区信息,则只显示硬盘大小信息.</p>
@@ -139,7 +139,7 @@ Regular expression: \*\*B00000000000000
 </li>
 <li>
 <p>查看硬盘信息 <code>fdisk -l</code><br>
-<img src="http://upload-images.jianshu.io/upload_images/6534548-de03bcb0ec99ade4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<img src="http://upload-images.jianshu.io/upload_images/6534548-de03bcb0ec99ade4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>创建新硬盘分区命令参数：<br>
@@ -165,7 +165,7 @@ First cylinder (51-125, default 51):   //注：这个就是分区的Start 值；
 Using default value 51  
 Command (m for help): w                     //最后输入w回车保存。
 </code></pre>
-<p><img src="http://upload-images.jianshu.io/upload_images/6534548-82cf31f74dea49a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<figure data-type="image" tabindex="1"><img src="http://upload-images.jianshu.io/upload_images/6534548-82cf31f74dea49a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" loading="lazy"></figure>
 <ul>
 <li>
 <p>查看一下：<br>
@@ -189,7 +189,7 @@ Command (m for help): w                     //最后输入w回车保存。
 <li>
 <p>查看硬盘信息<br>
 <code>df -h</code><br>
-<img src="http://upload-images.jianshu.io/upload_images/6534548-a9dd2528484a63cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<img src="http://upload-images.jianshu.io/upload_images/6534548-a9dd2528484a63cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" loading="lazy"></p>
 </li>
 </ul>
 ]]></content>
