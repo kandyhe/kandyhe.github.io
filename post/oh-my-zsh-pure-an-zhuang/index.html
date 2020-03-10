@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>nginx搭建文件服务器 | kandy</title>
+<title>oh my zsh + Pure安装 | kandy</title>
 <meta name="description" content="乱糟糟的日常">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -98,39 +98,52 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">nginx搭建文件服务器</h2>
-            <div class="post-date">2019-07-12</div>
+            <h2 class="post-title">oh my zsh + Pure安装</h2>
+            <div class="post-date">2020-03-10</div>
             
             <div class="post-content">
-              <h2 id="1-修改nginxconf配置文件内容如下">1、修改nginx.conf配置文件，内容如下:</h2>
-<pre><code>server {  
-        listen       9000;        #端口  
-        server_name  localhost;   #服务名  
-        charset utf-8; # 避免中文乱码
-        root    E:\Download\java;  #显示的根索引目录，注意这里要改成你自己的，目录要存在  
-
-        location / {
-            autoindex on;             #开启索引功能  
-            autoindex_exact_size off; # 关闭计算文件确切大小（单位bytes），只显示大概大小（单位kb、mb、gb）  
-            autoindex_localtime on;   # 显示本机时间而非 GMT 时间  
-        }
-    }
+              <h2 id="原料">原料</h2>
+<ul>
+<li><a href="https://brew.sh/index_zh-cn">Homebrew</a>: macOS 平台下的包管理工具</li>
+<li><a href="https://ohmyz.sh/">oh my zsh</a>: 终端插件</li>
+<li><a href="https://github.com/sindresorhus/pure">Pure</a>：zsh 主题配置</li>
+</ul>
+<h2 id="安装">安装</h2>
+<p>同样的，<code>Homebrew</code>的安装部分不再赘述，详情参考其官方中文网站 <a href="https://brew.sh/index_zh-cn">Homebrew</a></p>
+<h4 id="安装-oh-my-zsh">安装 oh my zsh</h4>
+<p>在终端中执行以下命令即可：</p>
+<pre><code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
 </code></pre>
-<h2 id="2-启动-停止-加载nginx命令">2、启动、停止、加载nginx命令：</h2>
-<p><em>注意路径是自己nginx安装路径</em></p>
-<pre><code>/usr/local/webserver/nginx/sbin/nginx -s reload            # 重新载入配置文件
-/usr/local/webserver/nginx/sbin/nginx -s reopen            # 重启 Nginx
-/usr/local/webserver/nginx/sbin/nginx -s stop              # 停止 Nginx
+<h4 id="安装-pure">安装 Pure</h4>
+<p><code>Pure</code>的安装依赖于 npm，因此如果没有安装<code>node</code>的话，我们需要先通过 Homebrew 安装 <code>node</code>:</p>
+<pre><code>brew install node
 </code></pre>
+<p>待<code>node</code>安装完成后，我们就可以在终端中执行以下命令，安装<code>Pure</code>了：</p>
+<pre><code>npm install --global pure-prompt
+</code></pre>
+<p><code>Pure</code>安装完成后还需要在<code>.zshrc</code>配置文件中启用，步骤如下：</p>
+<ul>
+<li>打开 Finder，进入当前用户目录，按下快捷键 <code>command⌘ + shift⇧ + .</code>，即可显示当前文件夹中的隐藏文件，找到<code>.zshrc</code>并双击打开：</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcook2ybyej30v40itach.jpg" alt="-c625" loading="lazy"></figure>
+<ul>
+<li>在文本编辑器中，搜索<code>source $ZSH/oh-my-zsh.sh</code>，找到后在其下方添加以下代码，然后保存退出：</li>
+</ul>
+<pre><code>autoload -U promptinit; promptinit
+prompt pure
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcoojxt60wj30v40jvtcb.jpg" alt="-c641" loading="lazy"></figure>
+<p>至此，我们就完成所有的安装工作了，接下来就是调校和配置了。</p>
+<p>待续。。。。</p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://kandyhe.github.io/post/ge-ren-ji-lu/">
+                <a href="https://kandyhe.github.io/post/quan-x-x/">
                   <h3 class="post-title">
-                    个人记录
+                    Quan X
                   </h3>
                 </a>
               </div>
