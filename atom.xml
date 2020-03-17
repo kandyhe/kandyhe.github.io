@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kandyhe.github.io</id>
     <title>kandy</title>
-    <updated>2020-03-10T03:45:39.001Z</updated>
+    <updated>2020-03-17T06:13:09.108Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kandyhe.github.io"/>
     <link rel="self" href="https://kandyhe.github.io/atom.xml"/>
@@ -92,15 +92,6 @@ prompt pure
 /usr/local/webserver/nginx/sbin/nginx -s reopen            # 重启 Nginx
 /usr/local/webserver/nginx/sbin/nginx -s stop              # 停止 Nginx
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[个人记录]]></title>
-        <id>https://kandyhe.github.io/post/ge-ren-ji-lu/</id>
-        <link href="https://kandyhe.github.io/post/ge-ren-ji-lu/">
-        </link>
-        <updated>2019-07-12T07:03:20.000Z</updated>
-        <content type="html"><![CDATA[<p>http://42.159.9.244:18890</p>
 ]]></content>
     </entry>
     <entry>
