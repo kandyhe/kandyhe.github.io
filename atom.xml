@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://kandyhe.github.io</id>
+    <title>kandy</title>
+    <updated>2023-04-03T09:57:07.042Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://kandyhe.github.io"/>
+    <link rel="self" href="https://kandyhe.github.io/atom.xml"/>
+    <subtitle>乱七八糟</subtitle>
+    <logo>https://kandyhe.github.io/images/avatar.png</logo>
+    <icon>https://kandyhe.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, kandy</rights>
+    <entry>
+        <title type="html"><![CDATA[20221203]]></title>
+        <id>https://kandyhe.github.io/post/20221203/</id>
+        <link href="https://kandyhe.github.io/post/20221203/">
+        </link>
+        <updated>2022-12-03T11:09:38.000Z</updated>
+        <content type="html"><![CDATA[<p>#周六<br>
+深入了解正则表达式，很有意思，<a href="https://r2coding.com/#/README?id=%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f">🔗</a></p>
+<p>捣鼓一个小时，重新注册和域名<br>
+绑定到github page。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[linux下挂载硬盘方法]]></title>
+        <id>https://kandyhe.github.io/post/linux-xia-gua-zai-ying-pan-fang-fa/</id>
+        <link href="https://kandyhe.github.io/post/linux-xia-gua-zai-ying-pan-fang-fa/">
+        </link>
+        <updated>2022-10-11T02:54:39.000Z</updated>
+        <content type="html"><![CDATA[<p>一般使用fdisk -l命令可以列出系统中当前连接的硬盘设备和分区信息.新硬盘没有分区信息,则只显示硬盘大小信息.</p>
+<p>关闭服务器加上新硬盘</p>
+<p>启动服务器，以root用户登录</p>
+<p>查看硬盘信息 fdisk -l</p>
+<p>创建新硬盘分区命令参数：<br>
+fdisk可以用m命令来看fdisk命令的内部命令；</p>
+<p>a：命令指定启动分区；<br>
+d：命令删除一个存在的分区；<br>
+l：命令显示分区ID号的列表；<br>
+m：查看fdisk命令帮助；<br>
+n：命令创建一个新分区；<br>
+p：命令显示分区列表；<br>
+t：命令修改分区的类型ID号；<br>
+w：命令是将对分区表的修改存盘让它发生作用。<br>
+Command (m for help):n<br>
+Command action<br>
+　　   e    extended                  //输入e为创建扩展分区<br>
+　　   p    primary partition (1-4)      //输入p为创建逻辑分区<br>
+p<br>
+Partion number(1-4)：1      //在这里输入l，就进入划分逻辑分区阶段了；<br>
+First cylinder (51-125, default 51):   //注：这个就是分区的Start 值；这里最好直接按回车，如果您输入了一个非默认的数字，会造成空间浪费；<br>
+Using default value 51<br>
+Command (m for help): w                     //最后输入w回车保存。</p>
+<p>查看一下：<br>
+fdisk -l</p>
+<p>格式化分区：<br>
+mkfs.ext4 /dev/sdb1 //注：将/dev/sdb1格式化为ext4类型</p>
+<p>配置开机自动挂载<br>
+因为mount挂载在重启服务器后会失效，所以需要将分区信息写到/etc/fstab文件中让它永久挂载：<br>
+vim /etc/fstab<br>
+加入：<br>
+/dev/sdb1(磁盘分区) /data1（挂载目录） ext4（文件格式）defaults 0 0</p>
+<p>挂载分区<br>
+mount -a</p>
+<p>查看硬盘信息<br>
+df -h</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[firewall增加端口]]></title>
+        <id>https://kandyhe.github.io/post/firewall-zeng-jia-duan-kou/</id>
+        <link href="https://kandyhe.github.io/post/firewall-zeng-jia-duan-kou/">
+        </link>
+        <updated>2022-10-11T02:51:46.000Z</updated>
+        <content type="html"><![CDATA[<p>开端口命令：firewall-cmd --zone=public --add-port=80/tcp --permanent<br>
+重启防火墙：systemctl restart firewalld.service</p>
+<p>命令含义：</p>
+<p>--zone #作用域</p>
+<p>--add-port=80/tcp  #添加端口，格式为：端口/通讯协议</p>
+<p>--permanent   #永久生效，没有此参数重启后失效</p>
+]]></content>
+    </entry>
+</feed>

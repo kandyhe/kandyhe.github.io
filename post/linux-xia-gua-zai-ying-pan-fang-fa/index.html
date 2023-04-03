@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>linux下挂载硬盘方法 | kandy</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kandyhe.github.io/favicon.ico?v=1680515425607">
+<link rel="stylesheet" href="https://kandyhe.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="一般使用fdisk -l命令可以列出系统中当前连接的硬盘设备和分区信息.新硬盘没有分区信息,则只显示硬盘大小信息.
+关闭服务器加上新硬盘
+启动服务器，以root用户登录
+查看硬盘信息 fdisk -l
+创建新硬盘分区命令参数：
+fdisk可..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kandyhe.github.io">
+        <img src="https://kandyhe.github.io/images/avatar.png?v=1680515425607" class="site-logo">
+        <h1 class="site-title">kandy</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+        
+          <a href="https://kandyhe.github.io/post/20221203" class="site-nav" target="_blank">
+            小憩
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      乱七八糟
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://kandyhe.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">linux下挂载硬盘方法</h2>
+            <div class="post-date">2022-10-11</div>
+            
+            <div class="post-content" v-pre>
+              <p>一般使用fdisk -l命令可以列出系统中当前连接的硬盘设备和分区信息.新硬盘没有分区信息,则只显示硬盘大小信息.</p>
+<p>关闭服务器加上新硬盘</p>
+<p>启动服务器，以root用户登录</p>
+<p>查看硬盘信息 fdisk -l</p>
+<p>创建新硬盘分区命令参数：<br>
+fdisk可以用m命令来看fdisk命令的内部命令；</p>
+<p>a：命令指定启动分区；<br>
+d：命令删除一个存在的分区；<br>
+l：命令显示分区ID号的列表；<br>
+m：查看fdisk命令帮助；<br>
+n：命令创建一个新分区；<br>
+p：命令显示分区列表；<br>
+t：命令修改分区的类型ID号；<br>
+w：命令是将对分区表的修改存盘让它发生作用。<br>
+Command (m for help):n<br>
+Command action<br>
+　　   e    extended                  //输入e为创建扩展分区<br>
+　　   p    primary partition (1-4)      //输入p为创建逻辑分区<br>
+p<br>
+Partion number(1-4)：1      //在这里输入l，就进入划分逻辑分区阶段了；<br>
+First cylinder (51-125, default 51):   //注：这个就是分区的Start 值；这里最好直接按回车，如果您输入了一个非默认的数字，会造成空间浪费；<br>
+Using default value 51<br>
+Command (m for help): w                     //最后输入w回车保存。</p>
+<p>查看一下：<br>
+fdisk -l</p>
+<p>格式化分区：<br>
+mkfs.ext4 /dev/sdb1 //注：将/dev/sdb1格式化为ext4类型</p>
+<p>配置开机自动挂载<br>
+因为mount挂载在重启服务器后会失效，所以需要将分区信息写到/etc/fstab文件中让它永久挂载：<br>
+vim /etc/fstab<br>
+加入：<br>
+/dev/sdb1(磁盘分区) /data1（挂载目录） ext4（文件格式）defaults 0 0</p>
+<p>挂载分区<br>
+mount -a</p>
+<p>查看硬盘信息<br>
+df -h</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://kandyhe.github.io/post/firewall-zeng-jia-duan-kou/">
+                  <h3 class="post-title">
+                    firewall增加端口
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
