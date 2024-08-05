@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.kandy.filegear-sg.me</id>
+    <title>KooooooooK</title>
+    <updated>2024-08-05T02:08:07.746Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://www.kandy.filegear-sg.me"/>
+    <link rel="self" href="https://www.kandy.filegear-sg.me/atom.xml"/>
+    <subtitle>兵荒马乱的世界</subtitle>
+    <logo>https://www.kandy.filegear-sg.me/images/avatar.png</logo>
+    <icon>https://www.kandy.filegear-sg.me/favicon.ico</icon>
+    <rights>All rights reserved 2024, KooooooooK</rights>
+    <entry>
+        <title type="html"><![CDATA[ GitHub + Gridea + Cloudflare 搭建免费个人网站 🚀]]></title>
+        <id>https://www.kandy.filegear-sg.me/4poTnrct8/</id>
+        <link href="https://www.kandy.filegear-sg.me/4poTnrct8/">
+        </link>
+        <updated>2024-07-04T06:29:37.000Z</updated>
+        <content type="html"><![CDATA[<p>建立个人网站可以展示你的作品、分享你的想法，还可以作为个人简历的一部分。本文将详细指导你如何使用 GitHub、Gridea 和 Cloudflare 来搭建一个免费且高效的个人网站。</p>
+<hr>
+<h4 id="步骤一准备工作-️">步骤一：准备工作 🛠️</h4>
+<ol>
+<li>
+<p><strong>注册 GitHub 账号</strong> ✍️</p>
+<ul>
+<li>访问 <a href="https://github.com">GitHub</a> 并创建一个新账号。<br>
+<img src="https://im.kandy.filegear-sg.me/file/8358dde9faa919bbaa206.png" alt="github注册" loading="lazy"></li>
+<li>创建一个新的仓库，命名为 <code>username.github.io</code>，其中 <code>username</code> 是你的 GitHub 用户名。<br>
+<img src="https://im.kandy.filegear-sg.me/file/32dcfa2d9a51201c54cfb.png" alt="创建仓库" loading="lazy"></li>
+</ul>
+</li>
+<li>
+<p><strong>安装 Gridea</strong> 💻</p>
+<ul>
+<li>访问 <a href="https://open.gridea.dev/">Gridea</a> 并下载适合你操作系统的版本。</li>
+<li>安装并打开 Gridea，进行初始设置。<br>
+<img src="https://im.kandy.filegear-sg.me/file/0feb3ba7fa240d576b0c9.png" alt="Gridea" loading="lazy"></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="步骤二配置-gridea">步骤二：配置 Gridea 📝</h4>
+<ol>
+<li>
+<p><strong>创建博客</strong> 🌐</p>
+<ul>
+<li>在 Gridea 中，点击“新建博客”并输入你的博客名称。</li>
+</ul>
+</li>
+<li>
+<p><strong>配置 GitHub 仓库</strong> 🔧</p>
+<ul>
+<li>进入 Gridea 的“设置”页面，选择“远程”。</li>
+<li>选择 GitHub 作为发布平台，填写仓库地址（如 <code>https://github.com/username/username.github.io</code>）和分支（通常为 <code>main</code> 或 <code>master</code>）。</li>
+<li>输入你的 GitHub 用户名和生成的个人访问令牌（PAT）。令牌可以在 GitHub 的“Settings” -&gt; “Developer settings” -&gt; “Personal access tokens” 生成。</li>
+<li>生成令牌时，确保选择 <code>repo</code> 权限，以便 Gridea 能够访问和更新你的仓库。</li>
+</ul>
+</li>
+<li>
+<p><strong>编写博客文章</strong> ✏️</p>
+<ul>
+<li>在 Gridea 中，点击“新建文章”开始写作。</li>
+<li>添加标题、标签和正文内容。你可以在正文中使用 Markdown 语法来格式化文本。</li>
+<li>完成后点击“发布”，Gridea 会自动将文章推送到你的 GitHub 仓库。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="步骤三配置-cloudflare-️">步骤三：配置 Cloudflare ☁️</h4>
+<ol>
+<li>
+<p><strong>注册 Cloudflare 账号</strong> ✍️</p>
+<ul>
+<li>访问 <a href="https://www.cloudflare.com">Cloudflare</a> 并创建一个新账号。</li>
+</ul>
+</li>
+<li>
+<p><strong>添加站点</strong> ➕</p>
+<ul>
+<li>登录 Cloudflare 后，点击“Add a Site”并输入你的域名（如 <code>username.github.io</code>）。</li>
+<li>Cloudflare 会自动扫描你的 DNS 记录。确认无误后，继续下一步。</li>
+</ul>
+</li>
+<li>
+<p><strong>更改域名服务器</strong> 🌐</p>
+<ul>
+<li>Cloudflare 会提供两个新的域名服务器。登录你的域名注册商（如 GoDaddy 或 Namecheap），将原有的域名服务器更改为 Cloudflare 提供的。</li>
+</ul>
+</li>
+<li>
+<p><strong>配置 HTTPS</strong> 🔒</p>
+<ul>
+<li>在 Cloudflare 的“SSL/TLS”设置中，选择“Full”模式，确保你的网站通过 HTTPS 安全访问。</li>
+<li>你也可以启用 HSTS (HTTP Strict Transport Security) 以增加安全性。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="步骤四检查与发布">步骤四：检查与发布 🔍</h4>
+<ol>
+<li>
+<p><strong>检查网站</strong> ✅</p>
+<ul>
+<li>等待几分钟后，访问 <code>https://username.github.io</code> 检查你的网站是否正常显示。</li>
+<li>确保所有链接、图片和资源都正常加载。</li>
+</ul>
+</li>
+<li>
+<p><strong>发布网站</strong> 🚀</p>
+<ul>
+<li>当你对网站的内容满意后，可以通过 Gridea 继续发布新文章，所有更改都会自动同步到 GitHub 并通过 Cloudflare 加速访问。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>通过以上步骤，你就成功搭建了一个通过 GitHub、Gridea 和 Cloudflare 构建的个人网站。这个过程不仅免费，还能让你享受到全球加速的快速访问体验。希望你能通过这个平台更好地展示自己的作品和想法！</p>
+<hr>
+<p>如果有任何问题或需要进一步的帮助，请随时留言。Happy blogging! 🎉</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[UUID生成地址]]></title>
+        <id>https://www.kandy.filegear-sg.me/uuid-sheng-cheng-di-zhi/</id>
+        <link href="https://www.kandy.filegear-sg.me/uuid-sheng-cheng-di-zhi/">
+        </link>
+        <updated>2024-07-02T10:56:40.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="uuid在线生成器">UUID在线生成器</h1>
+<h2 id="1024工具">1024工具</h2>
+<p>在线UUID生成器可以帮助你快速生成不同版本的UUID（通用唯一标识符）。</p>
+<h3 id="功能特点">功能特点</h3>
+<ul>
+<li>生成版本1的UUID（基于时间戳）</li>
+<li>生成版本3的UUID（基于命名空间的MD5哈希）</li>
+<li>生成版本4的UUID（随机生成）</li>
+<li>生成版本5的UUID（基于命名空间的SHA-1哈希）</li>
+</ul>
+<h3 id="如何使用">如何使用</h3>
+<ol>
+<li>选择需要生成的UUID版本。</li>
+<li>如果选择版本3或版本5，需要输入命名空间和名称。</li>
+<li>点击“生成UUID”按钮。</li>
+<li>复制生成的UUID。</li>
+</ol>
+<h3 id="示例">示例</h3>
+<p>以下是生成的不同版本UUID的示例：</p>
+<ul>
+<li><strong>版本1</strong>: <code>550e8400-e29b-41d4-a716-446655440000</code></li>
+<li><strong>版本3</strong>: <code>550e8400-e29b-41d4-a716-446655440000</code></li>
+<li><strong>版本4</strong>: <code>550e8400-e29b-41d4-a716-446655440000</code></li>
+<li><strong>版本5</strong>: <code>550e8400-e29b-41d4-a716-446655440000</code></li>
+</ul>
+<h3 id="访问链接">访问链接</h3>
+<p><a href="https://1024tools.com/uuid">UUID在线生成器</a></p>
+<p>使用上述链接可以直接访问在线UUID生成器工具。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SSH 密钥详解与教程 📖🔐]]></title>
+        <id>https://www.kandy.filegear-sg.me/ssh-mi-yao-xiang-jie-yu-jiao-cheng/</id>
+        <link href="https://www.kandy.filegear-sg.me/ssh-mi-yao-xiang-jie-yu-jiao-cheng/">
+        </link>
+        <updated>2024-07-01T06:55:58.000Z</updated>
+        <content type="html"><![CDATA[<h4 id="什么是ssh密钥">什么是SSH密钥？ 🤔</h4>
+<p>SSH（Secure Shell）密钥是一种用于加密的认证方法，常用于远程登录服务器。它由一对密钥组成：公钥和私钥。私钥保存在客户端，公钥保存在服务器上。通过这种方式，可以在不需要密码的情况下实现安全的远程登录。</p>
+<h4 id="为什么使用ssh密钥-️">为什么使用SSH密钥？ 🤷‍♀️</h4>
+<ol>
+<li><strong>安全性高</strong>：比传统密码更难破解。</li>
+<li><strong>方便</strong>：无需每次登录都输入密码。</li>
+<li><strong>自动化</strong>：适用于脚本和自动化任务。</li>
+</ol>
+<h4 id="如何生成ssh密钥">如何生成SSH密钥 🔧</h4>
+<p>在生成密钥前，请确保你已经安装了OpenSSH。大多数Linux和MacOS系统都默认安装了OpenSSH，Windows用户可以使用Git Bash或安装OpenSSH客户端。</p>
+<h5 id="1-生成密钥对">1. 生成密钥对</h5>
+<p>在终端（Terminal）中输入以下命令：</p>
+<pre><code class="language-bash">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;
+</code></pre>
+<ul>
+<li><code>-t rsa</code>：指定密钥类型为RSA。</li>
+<li><code>-b 4096</code>：设置密钥长度为4096位。</li>
+<li><code>-C &quot;your_email@example.com&quot;</code>：为密钥添加注释（通常是你的邮箱）。</li>
+</ul>
+<p>执行该命令后，系统会提示你保存密钥的位置和设置密码（可选）。按回车键使用默认位置并跳过密码设置（建议设置密码以增加安全性）。</p>
+<pre><code class="language-bash">Generating public/private rsa key pair.
+Enter file in which to save the key (/home/your_username/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+</code></pre>
+<p>完成后，会生成两个文件：</p>
+<ul>
+<li>私钥：<code>id_rsa</code></li>
+<li>公钥：<code>id_rsa.pub</code></li>
+</ul>
+<h5 id="2-将公钥添加到服务器">2. 将公钥添加到服务器 🔑</h5>
+<p>你可以使用以下命令将公钥复制到服务器：</p>
+<pre><code class="language-bash">ssh-copy-id username@remote_host
+</code></pre>
+<p>此命令会将公钥复制到远程主机的<code>~/.ssh/authorized_keys</code>文件中。如果无法使用此命令，可以手动复制：</p>
+<pre><code class="language-bash">cat ~/.ssh/id_rsa.pub | ssh username@remote_host 'cat &gt;&gt; ~/.ssh/authorized_keys'
+</code></pre>
+<h5 id="3-使用ssh密钥登录">3. 使用SSH密钥登录 🌐</h5>
+<p>现在，你可以使用SSH密钥登录远程服务器了：</p>
+<pre><code class="language-bash">ssh username@remote_host
+</code></pre>
+<h4 id="配图示例">配图示例 📸</h4>
+<p><strong>生成密钥对</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://example.com/path/to/your/keygen_screenshot.png" alt="生成密钥对" loading="lazy"></figure>
+<p><strong>将公钥复制到服务器</strong></p>
+<figure data-type="image" tabindex="2"><img src="https://example.com/path/to/your/copy_id_screenshot.png" alt="复制公钥" loading="lazy"></figure>
+<h4 id="小贴士">小贴士 💡</h4>
+<ul>
+<li><strong>保管好私钥</strong>：不要将私钥泄露给任何人。</li>
+<li><strong>使用强密码</strong>：为私钥设置强密码，以增加安全性。</li>
+<li><strong>定期更换密钥</strong>：定期生成新的SSH密钥，以防旧密钥被盗用。</li>
+</ul>
+<h4 id="结论">结论 🏁</h4>
+<p>通过SSH密钥认证，可以大大提高远程登录的安全性和便利性。掌握SSH密钥的使用方法是每个IT运维人员的必备技能。</p>
+<p>希望这篇博客能帮助你更好地理解和使用SSH密钥。如果有任何问题或建议，欢迎留言讨论！😊</p>
+<hr>
+<p>如果需要实际的示例图片或更详细的操作步骤，请告诉我，我可以提供进一步的帮助。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[🌟Mac上安装Homebrew并替换国内源]]></title>
+        <id>https://www.kandy.filegear-sg.me/mac-brew/</id>
+        <link href="https://www.kandy.filegear-sg.me/mac-brew/">
+        </link>
+        <updated>2024-06-26T05:27:08.000Z</updated>
+        <content type="html"><![CDATA[<hr>
+<h2 id="一-什么是homebrew">📖 一、什么是Homebrew？</h2>
+<p>Homebrew 是MacOS上的包管理工具，可以很方便地安装、更新、卸载软件包。使用Homebrew，我们可以很轻松地在终端中管理各种软件包。</p>
+<h2 id="二-安装homebrew">🔧 二、安装Homebrew</h2>
+<h3 id="1️⃣-打开终端">1️⃣ 打开终端</h3>
+<p>按下 <code>Command + Space</code>，输入<code>Terminal</code>，然后按回车键打开终端。</p>
+<h3 id="2️⃣-运行安装命令">2️⃣ 运行安装命令</h3>
+<p>在终端中输入以下命令，然后按回车键：</p>
+<pre><code class="language-bash">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://im.kandy.filegear-sg.me/file/e66a2441203db59ab29ea.png" alt="Homebrew安装命令" loading="lazy"></figure>
+<h3 id="3️⃣-按提示操作">3️⃣ 按提示操作</h3>
+<p>安装过程需要一些时间，并且会要求你输入密码（你电脑的登录密码）。根据提示输入密码并继续。</p>
+<p>安装完成后，按照屏幕上的提示操作，确保Homebrew路径正确配置。</p>
+<h2 id="三-替换为中国内加速源">🚀 三、替换为中国内加速源</h2>
+<p>由于国内网络环境的限制，从官方源下载软件包的速度可能会比较慢。我们可以通过替换为国内镜像源来加速下载速度。</p>
+<h3 id="1️⃣-替换brewgit为国内镜像">1️⃣ 替换brew.git为国内镜像</h3>
+<p>在终端中输入以下命令：</p>
+<pre><code class="language-bash">git -C &quot;$(brew --repo)&quot; remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+</code></pre>
+<h3 id="2️⃣-替换homebrew-coregit为国内镜像">2️⃣ 替换homebrew-core.git为国内镜像</h3>
+<p>继续输入以下命令：</p>
+<pre><code class="language-bash">brew tap --custom-remote --force-auto-update homebrew/core https://mirrors.ustc.edu.cn/homebrew-core.git
+</code></pre>
+<h3 id="3️⃣-替换homebrew-bottles为国内镜像">3️⃣ 替换homebrew-bottles为国内镜像</h3>
+<p>最后，输入以下命令：</p>
+<pre><code class="language-bash">echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' &gt;&gt; ~/.zshrc
+source ~/.zshrc
+</code></pre>
+<h2 id="四-验证安装">✅ 四、验证安装</h2>
+<p>在终端中输入以下命令，验证Homebrew是否安装成功：</p>
+<pre><code class="language-bash">brew -v
+</code></pre>
+<p>你应该会看到类似如下的输出：</p>
+<pre><code>Homebrew 3.x.x
+Homebrew/homebrew-core (git revision xxxxxx; last commit 2024-xx-xx)
+Homebrew/homebrew-cask (git revision xxxxxx; last commit 2024-xx-xx)
+</code></pre>
+<h2 id="五-总结">📋 五、总结</h2>
+<p>现在，你已经成功地在Mac电脑上安装了Homebrew，并将其替换为了中国内的加速源。你可以使用<code>brew install &lt;软件名&gt;</code>命令来安装你需要的软件包了。比如：</p>
+<pre><code class="language-bash">brew install wget
+</code></pre>
+<p>希望这篇教程对你有帮助！如果有任何问题，欢迎随时提问。</p>
+<hr>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在Mac上安装 Oh My Zsh 😎]]></title>
+        <id>https://www.kandy.filegear-sg.me/zai-mac-shang-an-zhuang-oh-my-zsh/</id>
+        <link href="https://www.kandy.filegear-sg.me/zai-mac-shang-an-zhuang-oh-my-zsh/">
+        </link>
+        <updated>2024-06-21T08:23:02.000Z</updated>
+        <content type="html"><![CDATA[<hr>
+<p>Oh My Zsh 是一个强大的命令行工具，可以大大改善你在终端中的使用体验。它基于 Zsh，并提供了丰富的主题和插件，使命令行操作更加高效和愉快。本文将指导你如何在 macOS 系统上安装和配置 Oh My Zsh。</p>
+<h2 id="步骤一安装-zsh">步骤一：安装 Zsh</h2>
+<p>如果你的系统还没有安装 Zsh，首先需要通过 Homebrew 进行安装：</p>
+<pre><code class="language-bash">brew install zsh
+</code></pre>
+<p>安装完成后，可以通过以下命令确认 Zsh 的安装版本：</p>
+<pre><code class="language-bash">zsh --version
+</code></pre>
+<h2 id="步骤二安装-oh-my-zsh">步骤二：安装 Oh My Zsh</h2>
+<p>安装 Oh My Zsh 非常简单，只需运行以下命令：</p>
+<pre><code class="language-bash">sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
+</code></pre>
+<p>这个命令将自动下载并安装 Oh My Zsh。安装过程中会提示你是否要切换默认 shell 为 Zsh，输入 <code>Y</code> 同意即可。</p>
+<h2 id="步骤三配置-oh-my-zsh">步骤三：配置 Oh My Zsh</h2>
+<p>安装完成后，Oh My Zsh 提供了丰富的主题和插件供选择。你可以编辑 <code>~/.zshrc</code> 文件来定制你的命令行环境。以下是一些常用的配置示例：</p>
+<h3 id="设置主题">设置主题</h3>
+<p>在 <code>~/.zshrc</code> 中找到 <code>ZSH_THEME</code> 行，并设置为你喜欢的主题，例如：</p>
+<pre><code class="language-bash">ZSH_THEME=&quot;agnoster&quot;
+</code></pre>
+<h3 id="启用插件">启用插件</h3>
+<p>Oh My Zsh 提供了各种有用的插件，可以大幅提升你的工作效率。在 <code>~/.zshrc</code> 中的 <code>plugins</code> 行添加你需要的插件，例如：</p>
+<pre><code class="language-bash">plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+</code></pre>
+<h2 id="步骤四重启终端">步骤四：重启终端</h2>
+<p>完成配置后，保存 <code>~/.zshrc</code> 文件并退出编辑器。然后关闭当前终端窗口，重新打开一个新的终端窗口或者重启电脑，以使配置生效。</p>
+<p>现在，你可以享受 Oh My Zsh 带来的强大功能和个性化定制了！🚀</p>
+<hr>
+<p>通过以上步骤，你已经成功在你的 Mac 上安装并配置了 Oh My Zsh。祝你在命令行世界里愉快工作！如果需要更多帮助或者有任何问题，请随时联系我。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux下的正则表达式]]></title>
+        <id>https://www.kandy.filegear-sg.me/linux-xia-de-zheng-ze-biao-da-shi/</id>
+        <link href="https://www.kandy.filegear-sg.me/linux-xia-de-zheng-ze-biao-da-shi/">
+        </link>
+        <updated>2022-12-06T02:32:45.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="一-理解正则">一、理解正则</h1>
+<p>正则表达式又称为正规表达式、常规表达式、在代码中常简写为regex、regex或RE。正则表达式是使用单个字符串来描述、匹配一系列符合某个句法规则的字符串，简单来说，是一种匹配字符串的方法，通过一些特殊符号，实现快速查找、删除、替换某个特定的字符串。<br>
+##👉🏻举例说明：</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[20221203]]></title>
+        <id>https://www.kandy.filegear-sg.me/20221203/</id>
+        <link href="https://www.kandy.filegear-sg.me/20221203/">
+        </link>
+        <updated>2022-12-03T11:09:38.000Z</updated>
+        <content type="html"><![CDATA[<p>#周六<br>
+深入了解正则表达式，很有意思，<a href="https://r2coding.com/#/README?id=%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f">🔗</a></p>
+<p>捣鼓一个小时，重新注册和域名<br>
+绑定到github page。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[linux下挂载硬盘方法]]></title>
+        <id>https://www.kandy.filegear-sg.me/linux-xia-gua-zai-ying-pan-fang-fa/</id>
+        <link href="https://www.kandy.filegear-sg.me/linux-xia-gua-zai-ying-pan-fang-fa/">
+        </link>
+        <updated>2022-10-11T02:54:39.000Z</updated>
+        <content type="html"><![CDATA[<p>一般使用fdisk -l命令可以列出系统中当前连接的硬盘设备和分区信息.新硬盘没有分区信息,则只显示硬盘大小信息.</p>
+<p>关闭服务器加上新硬盘</p>
+<p>启动服务器，以root用户登录</p>
+<p>查看硬盘信息 fdisk -l</p>
+<p>创建新硬盘分区命令参数：<br>
+fdisk可以用m命令来看fdisk命令的内部命令；</p>
+<p>a：命令指定启动分区；<br>
+d：命令删除一个存在的分区；<br>
+l：命令显示分区ID号的列表；<br>
+m：查看fdisk命令帮助；<br>
+n：命令创建一个新分区；<br>
+p：命令显示分区列表；<br>
+t：命令修改分区的类型ID号；<br>
+w：命令是将对分区表的修改存盘让它发生作用。<br>
+Command (m for help):n<br>
+Command action<br>
+　　   e    extended                  //输入e为创建扩展分区<br>
+　　   p    primary partition (1-4)      //输入p为创建逻辑分区<br>
+p<br>
+Partion number(1-4)：1      //在这里输入l，就进入划分逻辑分区阶段了；<br>
+First cylinder (51-125, default 51):   //注：这个就是分区的Start 值；这里最好直接按回车，如果您输入了一个非默认的数字，会造成空间浪费；<br>
+Using default value 51<br>
+Command (m for help): w                     //最后输入w回车保存。</p>
+<p>查看一下：<br>
+fdisk -l</p>
+<p>格式化分区：<br>
+mkfs.ext4 /dev/sdb1 //注：将/dev/sdb1格式化为ext4类型</p>
+<p>配置开机自动挂载<br>
+因为mount挂载在重启服务器后会失效，所以需要将分区信息写到/etc/fstab文件中让它永久挂载：<br>
+vim /etc/fstab<br>
+加入：<br>
+/dev/sdb1(磁盘分区) /data1（挂载目录） ext4（文件格式）defaults 0 0</p>
+<p>挂载分区<br>
+mount -a</p>
+<p>查看硬盘信息<br>
+df -h</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[firewall增加端口]]></title>
+        <id>https://www.kandy.filegear-sg.me/firewall-zeng-jia-duan-kou/</id>
+        <link href="https://www.kandy.filegear-sg.me/firewall-zeng-jia-duan-kou/">
+        </link>
+        <updated>2022-10-11T02:51:46.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<!-- more -->
+<p>开端口命令：firewall-cmd --zone=public --add-port=80/tcp --permanent<br>
+重启防火墙：systemctl restart firewalld.service</p>
+<p>命令含义：</p>
+<p>--zone #作用域</p>
+<p>--add-port=80/tcp  #添加端口，格式为：端口/通讯协议</p>
+<p>--permanent   #永久生效，没有此参数重启后失效</p>
+]]></content>
+    </entry>
+</feed>
